@@ -2,8 +2,7 @@ name: Deployment Info Comment on PR
 
 on:
   pull_request:
-    # 検証用に synchronize イベントを追加
-    types: [opened, synchronize]
+    types: [opened]
 
 jobs:
   comment_on_pr:
