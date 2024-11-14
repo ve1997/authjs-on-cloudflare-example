@@ -5,9 +5,6 @@ on:
 
 jobs:
   deploy:
-    concurrency:
-      group: ${{ github.ref_name }}
-      cancel-in-progress: false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -44,7 +41,7 @@ jobs:
             echo "<table><tr><td><strong>Latest commit:</strong> </td><td>"
             echo "<code>${{ env.COMMIT_HASH }}</code>"
             echo "</td></tr>"
-            echo "<tr><td><strong>Status:</strong></td><td>&nbsp;🔥&nbsp; Deploy successful!</td></tr>"
+            echo "<tr><td><strong>Status:</strong></td><td>&nbsp;✅&nbsp; Deploy successful!</td></tr>"
             echo "<tr><td><strong>Preview URL:</strong></td><td>"
             echo "<a href='${{ steps.deploy.outputs.deployment-url }}'>${{ steps.deploy.outputs.deployment-url }}</a>"
             echo "</td></tr>"
